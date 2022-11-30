@@ -1,0 +1,395 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#body {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(33, 33, 33);
+}
+
+nav {
+  position: relative;
+  text-align: center;
+  background-color: rgb(60, 17, 100);
+  height: 8vh;
+}
+
+#h1Nav {
+  font-size: 6vh;
+  color: white;
+}
+
+#main {
+  position: absolute;
+}
+
+#entrarSistema {
+  font-family: fantasy;
+  color: white;
+  position: absolute;
+  text-align: center;
+  left: 10vw;
+  top: 4vh;
+  width: 15vw;
+  font-size: 4vh;
+}
+
+#formEntrar {
+  position: absolute;
+}
+
+#nomeUsuario {
+  position: absolute;
+  width: 13vw;
+  height: 6vh;
+  top: 35vh;
+  left: 3vw;
+  border-radius: 20px;
+  border: none;
+  background-color: gainsboro;
+}
+
+#senha {
+  position: absolute;
+  width: 13vw;
+  height: 6vh;
+  top: 35vh;
+  left: 18.5vw;
+  border-radius: 20px;
+  border: none;
+  background-color: gainsboro;
+}
+
+input:focus-visible {
+  outline: none;
+}
+
+#entrar {
+  position: absolute;
+  cursor: pointer;
+  width: 10vw;
+  width: 10vw;
+  height: 6vh;
+  top: 44vh;
+  left: 12vw;
+  background-color: rgb(60, 17, 100);
+  border-radius: 20px;
+  border: none;
+}
+
+input[placeholder] {
+  text-align: center;
+  font-size: 2.5vh;
+  color: rgb(84, 84, 84);
+}
+
+#entrar[value] {
+  font-size: 2.5vh;
+  color: white;
+}
+
+#login {
+  position: absolute;
+  border-radius: 7%;
+  left: 33vw;
+  top: 15vh;
+  background-color: blueviolet;
+  width: 35vw;
+  height: 60vh;
+}
+
+#criarConta {
+  position: absolute;
+  top: 51.5vh;
+  left: 12vw;
+  cursor: pointer;
+  width: 10vw;
+  height: 6vh;
+  border-radius: 20px;
+  border: none;
+  background-color: transparent;
+}
+
+#criarConta[value] {
+  font-size: 2.5vh;
+  color: white;
+}
+
+#cConta {
+  position: absolute;
+  border-radius: 7%;
+  left: 33vw;
+  top: 15vh;
+  background-color: blueviolet;
+  width: 35vw;
+  height: 60vh;
+}
+
+.criarSenLog {
+  position: absolute;
+  width: 15.4vw;
+  height: 5vh;
+  left: 9.5vw;
+  border-radius: 20px;
+  border: none;
+}
+
+.criarSenLog[placeholder] {
+  font-size: 2vh;
+  color: grey;
+}
+
+#CriaNomeUsuario {
+  top: 16vh;
+}
+
+#spanUserMsg{
+  position: absolute;
+  width: 15.4vw;
+  font-family:sans-serif;
+  font-size: 2.3vh;
+  font-weight: bold;
+  left: 9.5vw;
+  top: 21.2vh;
+  text-align: center;
+}
+
+#spanSenhaMsg{
+  position: absolute;
+  width: 15.4vw;
+  font-family:sans-serif;
+  font-size: 2.3vh;
+  font-weight: bold;
+  left: 9.5vw;
+  top: 29.2vh;
+  text-align: center;
+}
+
+#spanConfMsg{
+  position: absolute;
+  width: 15.4vw;
+  font-family:sans-serif;
+  font-size: 2.3vh;
+  font-weight: bold;
+  left: 9.5vw;
+  top: 37.2vh;
+  text-align: center;
+}
+
+#CriaSenha {
+  top: 24vh;
+}
+
+#ConfSenha {
+  top: 32vh;
+}
+
+.olhoSenha {
+  position: absolute;
+  left: 22.5vw;
+  height: 1.9vh;
+  width: 1.5vw;
+}
+
+#olhoSenha1 {
+  cursor: pointer;
+  top: 25.6vh;
+}
+
+#olhoConfSenha {
+  cursor: pointer;
+  top: 33.6vh;
+}
+
+#CriarLogin {
+  width: 10vw;
+  position: absolute;
+  top: 42vh;
+  left: 12vw;
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(60, 17, 100);
+  height: 6vh;
+  color: white;
+  font-size: 3vh;
+  
+}
+
+#labelJaPossuiConta {
+  overflow: hidden;
+  width: 15vw;
+  height: 4vh;
+  font-size: 3vh;
+  position: absolute;
+  left: 7vw;
+  top: 52.5vh;
+}
+
+#fazerLogin {
+  position: absolute;
+  top: 52.5vh;
+  left: 18.5vw;
+  width: 9vw;
+  font-size: 3vh;
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* PAGINA PRINCIPAL */
+
+#sair{
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  color: white;
+  width: 4vw;
+  height: 4vh;
+  left: 1vw;
+  top: 1vh;
+  cursor: pointer;
+}
+
+#imgSair{
+  width: 2.5vw;
+  height: 2.5vw;
+}
+
+#bodyP{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(68, 68, 68);
+}
+
+#legendaRecados{
+  position: absolute;
+  left: 3vw;
+  top: 10vh;
+  font-size: 8vh;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: whitesmoke;
+}
+
+#fieldset{
+  position: absolute;
+ height: 6.7vh;
+ width: 80vw;
+  top: 26vh;
+  left: 3vw;
+  border-radius: 4px;
+  background-color: darkgrey;
+  border: none;
+}
+
+#descricao{
+  position: absolute;
+  top: 0.9vh;
+  left: 0.9vw;
+  height: 5vh;
+  width: 25vw;
+  font-size: 3vh;
+  border-radius: 4px;
+  border: none;
+  text-align:  left;
+  color: black;
+  background-color: white;
+}
+
+#detalhamento{
+  position: absolute;
+  top: 0.9vh;
+  left: 27vw;
+  height: 5vh;
+  width: 45vw;
+  font-size: 3vh;
+  border-radius: 4px;
+  border: none;
+  text-align: left;
+  color: black;
+  background-color: white;
+}
+
+.lembretes[placeholder]{
+  color: black;
+  font-family:monospace;
+}
+
+#btnSalvar{
+  position: absolute;
+  top: 0.9vh;
+  left: 72.5vw;
+  font-family: fantasy;
+  width: 6.7vw;
+  height: 5vh;
+  border-radius: 7px;
+  border: none;
+  background-color: rgb(101, 169, 0);
+  cursor: pointer;
+}
+
+
+#tabela{
+  position: absolute;
+  width: 80.5vw;
+  top: 44vh;
+  left: 3vw;
+  font-family: cursive;
+  background-color: darkgrey;
+  border: solid 1px black;
+  border-radius: 5px;
+}
+
+tr {
+  height: 5vh;
+  background-color: white;
+}
+
+td{
+  max-width: 20vw;
+  word-wrap: break-word;
+  border-radius: 3px;
+  text-align: center;
+  
+}
+
+th{
+  border-radius: 3px;
+  text-align: center;
+}
+
+#pColuna{
+  font-family: fantasy;
+}
+
+.btns{
+  margin:0px 6px 5px 6px;
+}
+
+#btnEditar{
+  font-size: 2.7vh;
+  font-family: fantasy;
+  background-color: goldenrod;
+  height: 4.8vh;
+  width: 6vw;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+#btnExcluir{
+  font-size: 2.7vh;
+  font-family: fantasy;
+  background-color: red;
+  height: 4.8vh;
+  width: 6vw;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
