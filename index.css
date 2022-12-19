@@ -4,18 +4,29 @@
   box-sizing: border-box;
 }
 
+html{
+  overflow-x: hidden;
+  
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
 #body {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-color: rgb(33, 33, 33);
+  background-color: rgb(87, 87, 87);
+  background-image: url(./fundo\ de\ tela.png);
+  background-size: cover;
+  background-size: 25vh;
 }
 
 nav {
   position: relative;
   text-align: center;
   background-color: rgb(60, 17, 100);
-  height: 8vh;
 }
 
 #h1Nav {
@@ -30,16 +41,31 @@ nav {
 #entrarSistema {
   font-family: fantasy;
   color: white;
-  position: absolute;
   text-align: center;
-  left: 10vw;
-  top: 4vh;
-  width: 15vw;
-  font-size: 4vh;
+  font-size: clamp(2rem, 3vw, 2.5rem);
 }
 
 #formEntrar {
   position: absolute;
+  animation-name: animForm;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-duration: 2.4s;
+}
+
+@keyframes animForm {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: initial;
+  }
 }
 
 #nomeUsuario {
@@ -100,6 +126,22 @@ input[placeholder] {
   background-color: blueviolet;
   width: 35vw;
   height: 60vh;
+  animation-name: animLogin;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-duration: 2s;
+}
+
+@keyframes animLogin {
+  0% {
+    left: -36vw;
+    width: 5vw;
+    height: 20vh;
+  }
+  50% {
+  }
+  100% {
+  }
 }
 
 #criarConta {
@@ -119,114 +161,136 @@ input[placeholder] {
   color: white;
 }
 
-#cConta {
+/*CRIAR CONTA*/
+
+.bodyCriar {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(87, 87, 87);
+  background-image: url(./fundo\ de\ tela.png);
+  background-size: cover;
+  background-size: 25vh;
+}
+
+#nave {
+  text-align: center;
+  background-color: rgb(60, 17, 100);
+  height: 8vh;
+}
+
+#mainCriar {
   position: absolute;
-  border-radius: 7%;
-  left: 33vw;
-  top: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 92vh;
+  width: 100vw;
+}
+
+#formCriar {
+  position: absolute;
+  animation-name: animFormCriar;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-duration: 2.4s;
+}
+
+@keyframes animFormCriar {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: initial;
+  }
+}
+
+#containerCriar {
+  border-radius: 8%;
   background-color: blueviolet;
-  width: 35vw;
-  height: 60vh;
+  -webkit-animation-name: animCriar;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-fill-mode: forwards;
 }
 
-.criarSenLog {
-  position: absolute;
-  width: 15.4vw;
-  height: 5vh;
-  left: 9.5vw;
-  border-radius: 20px;
-  border: none;
+@-webkit-keyframes animCriar {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  100% {
+    width: 100%;
+    height: 65%;
+  }
 }
 
-.criarSenLog[placeholder] {
-  font-size: 2vh;
-  color: grey;
+#rowCriar {
+  animation-name: animRow;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-duration: 2.5s;
+}
+
+@keyframes animRow {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 #CriaNomeUsuario {
-  top: 16vh;
-}
-
-#spanUserMsg{
-  position: absolute;
-  width: 15.4vw;
-  font-family:sans-serif;
-  font-size: 2.3vh;
-  font-weight: bold;
-  left: 9.5vw;
-  top: 21.2vh;
-  text-align: center;
-}
-
-#spanSenhaMsg{
-  position: absolute;
-  width: 15.4vw;
-  font-family:sans-serif;
-  font-size: 2.3vh;
-  font-weight: bold;
-  left: 9.5vw;
-  top: 29.2vh;
-  text-align: center;
-}
-
-#spanConfMsg{
-  position: absolute;
-  width: 15.4vw;
-  font-family:sans-serif;
-  font-size: 2.3vh;
-  font-weight: bold;
-  left: 9.5vw;
-  top: 37.2vh;
-  text-align: center;
+  border-radius: 10px;
+  border: none;
+  color: black;
 }
 
 #CriaSenha {
-  top: 24vh;
+  border-radius: 10px;
+  border: none;
+}
+
+#spamSen{
+  color: white;
+}
+
+#spamUserP{
+  color: white;
 }
 
 #ConfSenha {
-  top: 32vh;
+  border-radius: 10px;
+  border: none;
 }
 
-.olhoSenha {
-  position: absolute;
-  left: 22.5vw;
-  height: 1.9vh;
-  width: 1.5vw;
-}
-
-#olhoSenha1 {
-  cursor: pointer;
-  top: 25.6vh;
-}
-
-#olhoConfSenha {
-  cursor: pointer;
-  top: 33.6vh;
+#lougin {
+  border: none;
+  border-radius: 5px;
+  background-color: transparent;
+  color: aliceblue;
+  font-size: 3vh;
 }
 
 #CriarLogin {
-  width: 10vw;
-  position: absolute;
-  top: 42vh;
-  left: 12vw;
+  width: 35%;
   border-radius: 20px;
   border: none;
   background-color: rgb(60, 17, 100);
-  height: 6vh;
   color: white;
-  font-size: 3vh;
-  
+  font-size: 2.8vh;
+  padding: 2%;
 }
 
 #labelJaPossuiConta {
-  overflow: hidden;
-  width: 15vw;
-  height: 4vh;
   font-size: 3vh;
-  position: absolute;
-  left: 7vw;
-  top: 52.5vh;
 }
 
 #fazerLogin {
@@ -243,71 +307,88 @@ input[placeholder] {
 
 /* PAGINA PRINCIPAL */
 
-#sair{
-  position: absolute;
+#sair {
+  
   background-color: transparent;
   border: none;
   color: white;
-  width: 4vw;
-  height: 4vh;
-  left: 1vw;
-  top: 1vh;
   cursor: pointer;
 }
 
-#imgSair{
-  width: 2.5vw;
-  height: 2.5vw;
+#tabela{
+  width: 100%;
 }
 
-#bodyP{
+table{
+  border-radius: 10px;
+  background-color: transparent;
+  border: none;
+}
+
+th{
+  max-width: 75vw;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.accordion-button{
+  font-weight: bold;
+}
+
+
+.accordion-collapse{
+  font-weight: normal;
+ }
+
+.accordion{
+  max-width: 100vw;
+  word-wrap: break-word;
+}
+
+#h1NavPrin {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  color: white;
+}
+
+#imgSair {
+  height: clamp(2rem, 3vw, 2.5rem);
+}
+
+#bodyP {
   position: relative;
   width: 100vw;
   height: 100vh;
+  background-image: url(./fundo\ de\ tela.png);
+  background-size: cover;
+  background-size: 25vh;
   background-color: rgb(68, 68, 68);
 }
 
-#legendaRecados{
-  position: absolute;
-  left: 3vw;
-  top: 10vh;
-  font-size: 8vh;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+#mainCont{
+  height: 100%;
+  width: 100%;
+}
+
+#rowRecados{
+  background-color: rgb(125, 26, 217);
+  border-radius: 10px;
+}
+
+#legendaRecados {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   color: whitesmoke;
 }
 
-#fieldset{
-  position: absolute;
- height: 6.7vh;
- width: 80vw;
-  top: 26vh;
-  left: 3vw;
+#fieldset {
   border-radius: 4px;
-  background-color: darkgrey;
+  background-color: rgb(189, 129, 253);
   border: none;
 }
 
-#descricao{
-  position: absolute;
-  top: 0.9vh;
-  left: 0.9vw;
-  height: 5vh;
-  width: 25vw;
-  font-size: 3vh;
-  border-radius: 4px;
-  border: none;
-  text-align:  left;
-  color: black;
-  background-color: white;
-}
-
-#detalhamento{
-  position: absolute;
-  top: 0.9vh;
-  left: 27vw;
-  height: 5vh;
-  width: 45vw;
-  font-size: 3vh;
+#descricao {
+  width: 100%;
+  font-size: clamp(1rem, 3vw, 1.5rem);
   border-radius: 4px;
   border: none;
   text-align: left;
@@ -315,63 +396,43 @@ input[placeholder] {
   background-color: white;
 }
 
-.lembretes[placeholder]{
-  color: black;
-  font-family:monospace;
-}
-
-#btnSalvar{
-  position: absolute;
-  top: 0.9vh;
-  left: 72.5vw;
-  font-family: fantasy;
-  width: 6.7vw;
-  height: 5vh;
-  border-radius: 7px;
+#detalhamento {
+  width: 100%;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  border-radius: 4px;
   border: none;
-  background-color: rgb(101, 169, 0);
-  cursor: pointer;
-}
-
-
-#tabela{
-  position: absolute;
-  width: 80.5vw;
-  top: 44vh;
-  left: 3vw;
-  font-family: cursive;
-  background-color: darkgrey;
-  border: solid 1px black;
-  border-radius: 5px;
-}
-
-tr {
-  height: 5vh;
+  text-align: left;
+  color: black;
   background-color: white;
 }
 
-td{
-  max-width: 20vw;
-  word-wrap: break-word;
-  border-radius: 3px;
-  text-align: center;
-  
+.lembretes[placeholder] {
+  color: black;
+  font-family: monospace;
 }
 
-th{
-  border-radius: 3px;
-  text-align: center;
+#btnSalvar {
+  width: 100%;
+  font-size: clamp(0.8rem, 3vw, 1.5rem);
+  font-family: fantasy;
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
 }
 
-#pColuna{
+.pointer{
+  cursor: pointer;
+}
+
+#pColuna {
   font-family: fantasy;
 }
 
-.btns{
-  margin:0px 6px 5px 6px;
+.btns {
+  margin: 0px 6px 5px 6px;
 }
 
-#btnEditar{
+#btnEditar {
   font-size: 2.7vh;
   font-family: fantasy;
   background-color: goldenrod;
@@ -382,7 +443,7 @@ th{
   cursor: pointer;
 }
 
-#btnExcluir{
+#btnExcluir {
   font-size: 2.7vh;
   font-family: fantasy;
   background-color: red;
@@ -392,4 +453,3 @@ th{
   border: none;
   cursor: pointer;
 }
-

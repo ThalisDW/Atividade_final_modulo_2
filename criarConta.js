@@ -10,22 +10,32 @@ function makeId(length) {
 }
 
 function checkUserUnico() {
-    const userSpan = document.querySelector("#spanUserMsg");
+  let spamUser = document.querySelector("#spamUser")
+  let spamUserP = document.querySelector("#spamUserP")
     if (usuario.value === "") {
-      usuario.setAttribute("style", "border: 1.5px solid #DDB940");
-      userSpan.setAttribute("style", "color: #DDB940");
-      userSpan.innerText = "Campo de usuario vazio.";
+      usuario.setAttribute("style", "border: 3px solid #DDB940");
       senha.setAttribute("disabled", "true");
       confirmSenha.setAttribute("disabled", "true");
     } else if (usuarios.some((el) => el.nome === usuario.value)) {
-      usuario.setAttribute("style", "border: 1.5px solid red");
-      userSpan.setAttribute("style", "color: red");
-      userSpan.innerText = "Usuario já existente.";
+      usuario.setAttribute("style", "border: 4px solid red");
+      
+    }else if(usuario.value.length < 6){
+      usuario.setAttribute("style", "border: 4px solid red");
+      spamUserP.remove()
+      spamUser.innerHTML = `<div class="alert alert-danger mb-1 mt-1 p-0 pe-1 ps-1 m-0" id="spamUserD" role="alert">
+      Nome inválido.
+    </div>`
+      setTimeout(() => {
+        document.querySelector(".alert").remove()
+        spamUser.innerHTML =`<p id="spamUserP" class="m-0">Mínimo 6 caracteres.</p>`
+      }, 4000);
+      
     } else {
-      usuario.setAttribute("style", "border: 1.5px solid #32A428");
-      userSpan.setAttribute("style", "color: #32A428");
-      userSpan.innerText = "Usuario validado.";
+      usuario.setAttribute("style", "border: 2px solid #32A428");
       senha.removeAttribute("disabled");
+      spamUserP.remove()
+      spamUser.innerHTML = `<p id="spamUserP" class="m-0">&nbsp</p>`
+      document.querySelector("#spamSen").innerText="Mínimo 6 caracteres.";
     }
   }
   
@@ -34,41 +44,37 @@ function checkUserUnico() {
   }
 
 function validarSenha(){
-    const spanSenhaMsg = document.querySelector("#spanSenhaMsg")
+    
+    
     if (senha.value === "") {
-        senha.setAttribute("style", "border: 1.5px solid #DDB940");
-        spanSenhaMsg.setAttribute("style", "color: #DDB940");
-        spanSenhaMsg.innerText = "Campo senha vazio.";
+        senha.setAttribute("style", "border: 3px solid #DDB940");
         confirmSenha.setAttribute("disabled", "true");
+        
     }
     else if (senha.value.length >0 && senha.value.length <= 5) {
-        senha.setAttribute("style", "border: 1.5px solid red");
-        spanSenhaMsg.setAttribute("style", "color: red");
-        spanSenhaMsg.innerText = "Mínimo 6 caracter.";
+        senha.setAttribute("style", "border: 4px solid red");
+       
     }else{
-        senha.setAttribute("style", "border: 1.5px solid #32A428");
-      spanSenhaMsg.setAttribute("style", "color: #32A428");
-      spanSenhaMsg.innerText = "Senha válida.";
+        senha.setAttribute("style", "border: 2px solid #32A428");
+      
       confirmSenha.removeAttribute("disabled");
+      document.querySelector("#spamSen").innerHTML="&nbsp";
     }
 }
 
 function validarConfirm(){
-  const spamSenhaConf = document.querySelector("#spanConfMsg")
+  
+  
   if (confirmSenha.value === senha.value){
-    confirmSenha.setAttribute("style", "border: 1.5px solid #32A428")
-    spamSenhaConf.setAttribute("style", "color: #32A428")
-    spamSenhaConf.innerText= "Senha válida."
+    confirmSenha.setAttribute("style", "border: 2px solid #32A428")
     criaUsuario.setAttribute("style", "cursor: pointer")
     criaUsuario.removeAttribute("disabled")
   }else if(confirmSenha.value === ""){
-    confirmSenha.setAttribute("style", "border: 1.5px solid #DDB940");
-    spamSenhaConf.setAttribute("style", "color: #DDB940");
-    spamSenhaConf.innerText = "Campo confirmar senha vazio.";
+    confirmSenha.setAttribute("style", "border: 3px solid #DDB940");
+    
   }else{
-    confirmSenha.setAttribute("style", "border: 1.5px solid red");
-    spamSenhaConf.setAttribute("style", "color: red");
-    spamSenhaConf.innerText = "Senha inválida.";
+    confirmSenha.setAttribute("style", "border: 4px solid red");
+    
   }
 }
 
@@ -96,4 +102,4 @@ confirmSenha.addEventListener("blur",validarConfirm)
 criaUsuario.addEventListener("click", criarLog)
 
 
-document.querySelector("#fazerLogin").addEventListener("click", fazLog);
+document.querySelector("#lougin").addEventListener("click", fazLog);

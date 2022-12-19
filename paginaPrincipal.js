@@ -19,7 +19,26 @@ if (
   recados
     .filter((el) => el.idUser === idUser)
     .forEach((el) => {
-      tabela.innerHTML += `<tr id="${el.idRecado}"><th>${el.descricao}</th><td>${el.detalhamento}</td><td><button id="btnEditar" class="btns" onclick="editar('${el.idRecado}')">Editar</button><button id="btnExcluir" onclick="excluir('${el.idRecado}')" class="btns">Excluir</button></td></tr>`;
+      tabela.innerHTML += `<tr>
+      <th>
+          <div class="accordion" id="recado${el.idRecado}">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="h2${el.idRecado}">
+                <button class="accordion-button pointer" type="button" data-bs-toggle="collapse" data-bs-target="#${el.idRecado}" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                  ${el.descricao} 
+                </button>
+              </h2>
+              <div id="${el.idRecado}" class="accordion-collapse collapse" aria-labelledby="h2${el.idRecado}">
+                <div class="accordion-body">
+                 <small> ${el.detalhamento} <small/>
+                </div>
+              </div>
+            </div>
+          </div>
+      </th>
+    </tr>`;
+
+      /*`<tr id="${el.idRecado}"><th>${el.descricao}</th><td>${el.detalhamento}</td><td><button id="btnEditar" class="btns" onclick="editar('${el.idRecado}')">Editar</button><button id="btnExcluir" onclick="excluir('${el.idRecado}')" class="btns">Excluir</button></td></tr>`; */
     });
 }
 
@@ -38,14 +57,48 @@ function salvar() {
   } else if (localStorage.getItem("recados") === null) {
     lembretes.push(novoLembrete);
     localStorage.setItem("recados", JSON.stringify(lembretes));
-    tabela.innerHTML += `<tr id='${idRecado}'><th>${descricao.value}</th><td>${detalhamento.value}</td><td><button id="btnEditar" class="btns" onclick="editar('${idRecado}')">Editar</button><button id="btnExcluir" onclick="excluir('${idRecado}')" class="btns">Excluir</button></td></tr>`;
+    tabela.innerHTML += `<tr>
+    <th>
+        <div class="accordion" id="recado${idRecado}">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="h2${idRecado}">
+              <button class="accordion-button pointer" type="button" data-bs-toggle="collapse" data-bs-target="#${idRecado}" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                ${descricao.value}
+              </button>
+            </h2>
+            <div id="${idRecado}" class="accordion-collapse collapse" aria-labelledby="h2${idRecado}">
+              <div class="accordion-body">
+              <small>  ${detalhamento.value} <small/>
+              </div>
+            </div>
+          </div>
+        </div>
+    </th>
+  </tr>`;
     descricao.value = "";
     detalhamento.value = "";
   } else if (localStorage.getItem("recados") != null) {
     lembretes = JSON.parse(localStorage.getItem("recados"));
     lembretes.push(novoLembrete);
     localStorage.setItem("recados", JSON.stringify(lembretes));
-    tabela.innerHTML += `<tr id='${idRecado}'><th>${descricao.value}</th><td>${detalhamento.value}</td><td><button id="btnEditar" class="btns" onclick="editar('${idRecado}')">Editar</button><button id="btnExcluir" onclick="excluir('${idRecado}')" class="btns">Excluir</button></td></tr>`;
+    tabela.innerHTML += `<tr>
+    <th>
+        <div class="accordion" id="recado${idRecado}">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="h2${idRecado}">
+              <button class="accordion-button pointer" type="button" data-bs-toggle="collapse" data-bs-target="#${idRecado}" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                ${descricao.value}
+              </button>
+            </h2>
+            <div id="${idRecado}" class="accordion-collapse collapse" aria-labelledby="h2${idRecado}">
+              <div class="accordion-body">
+              <small>  ${detalhamento.value} <small/>
+              </div>
+            </div>
+          </div>
+        </div>
+    </th>
+  </tr>`;
     descricao.value = "";
     detalhamento.value = "";
   }
@@ -96,4 +149,4 @@ function editar(idRecado) {
 }
 
 btnSalvar.addEventListener("click", salvar);
-btnSair.addEventListener("click", sair);
+/* btnSair.addEventListener("click", sair); */
